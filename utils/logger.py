@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 class Logger(object):
+    
     def __init__(self, hp):
         print("Hyperparameters:")
         print(json.dumps(hp, indent=2))

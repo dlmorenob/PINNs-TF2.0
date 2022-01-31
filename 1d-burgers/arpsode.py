@@ -31,7 +31,6 @@ print("********************")
 from burgersutil import prep_data, plot_ide_cont_results
 from neuralnetwork import NeuralNetwork
 from logger import Logger
-#import utils
 
 #%% HYPER PARAMETERS
 
@@ -228,7 +227,7 @@ def error():
 logger.set_error_fn(error)
 pinn.fit(X_u_train, u_train)
 
-#sys.exit()
+sys.exit()
 
 # Getting the model predictions, from the same (x,t) that the predictions were previously gotten from
 u_pred, f_pred = pinn.predict(X_star)

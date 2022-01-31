@@ -15,13 +15,25 @@ import matplotlib.gridspec as gridspec
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 # "." for Colab/VSCode, and ".." for GitHub
-repoPath = os.path.join(".", "PINNs")
-# repoPath = os.path.join("..", "PINNs")
-utilsPath = os.path.join(repoPath, "Utilities")
-dataPath = os.path.join(repoPath, "main", "Data")
-appDataPath = os.path.join(repoPath, "appendix", "Data")
 
-sys.path.append("utils")
+print("burgersutils")
+
+mycudir  = os.chdir("..")
+mycudir  = os.getcwd()
+print(mycudir)
+
+#repoPath = os.path.join(mycudir, "PINNs")
+# repoPath = os.path.join("..", "PINNs")
+utilsdir = os.path.join(mycudir, "utils")
+sys.path.append(mycudir)
+sys.path.append(utilsdir)
+print("current dir")
+print(mycudir)
+
+#utilsPath = os.path.join(repoPath, "Utilities")
+#dataPath = os.path.join(repoPath, "main", "Data")
+#appDataPath = os.path.join(repoPath, "appendix", "Data")
+#from utils import *
 from plotting import newfig, savefig, saveResultDir
 
 def prep_data(path, N_u=None, N_f=None, N_n=None, q=None, ub=None, lb=None, noise=0.0, idx_t_0=None, idx_t_1=None, N_0=None, N_1=None):

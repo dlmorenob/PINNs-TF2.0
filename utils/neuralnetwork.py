@@ -3,7 +3,6 @@ import numpy as np
 
 from custom_lbfgs import lbfgs, Struct
 
-
 class NeuralNetwork(object):
     def __init__(self, hp, logger, ub, lb):
 
@@ -143,7 +142,10 @@ class NeuralNetwork(object):
         u = self.tensor(u)
 
         # Optimizing
+        print("Running  TF OPTIMIZATION")
         self.tf_optimization(X_u, u)
+
+        print("Running  NT OPTIMIZATION")
         self.nt_optimization(X_u, u)
 
         self.logger.log_train_end(self.tf_epochs + self.nt_config.maxIter)
@@ -157,4 +159,3 @@ class NeuralNetwork(object):
 
     def tensor(self, X):
         return tf.convert_to_tensor(X, dtype=self.dtype)
-
